@@ -1,0 +1,28 @@
+﻿<Page x:Class="DotNetProjectWPF.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DotNetProjectWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SettingsPage">
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <Label VerticalAlignment="Center">API Address</Label>
+            <TextBox Name="ApiUrl" VerticalAlignment="Center" IsEnabled="False" MinWidth="100"/>
+            <Button Name="UpdateApiUrlButton" VerticalAlignment="Center" Padding="10,0" Margin="10,0" Click="UpdateApiUrlButtonClick">Update</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label VerticalAlignment="Center">Room ID of the machine</Label>
+            <TextBox Name="RoomIdOfTheMachine" VerticalAlignment="Center" IsEnabled="False" MinWidth="100"/>
+            <Button Name="UpdateRoomIdOfTheMachineButton" VerticalAlignment="Center" Padding="10,0" Margin="10,0" Click="UpdateRoomIdOfTheMachineButtonClick">Update</Button>
+            <Label Name="IdNotInt" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">ID must be an integer !</Label>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <Label Name="NullValue" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">Please complete all fields !</Label>
+            <Button Name="SaveButton" VerticalAlignment="Center" Padding="10,0" Click="SaveButtonClick">Save</Button>
+        </StackPanel>
+    </StackPanel>
+</Page>

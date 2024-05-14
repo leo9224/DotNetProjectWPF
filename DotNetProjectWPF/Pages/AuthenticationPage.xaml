@@ -1,0 +1,28 @@
+﻿<Page x:Class="DotNetProjectWPF.Pages.AuthenticationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DotNetProjectWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthentificationPage">
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel HorizontalAlignment="Left">
+            <Button Click="ExitButtonClick" Padding="10,0">Back</Button>
+        </StackPanel>
+        <StackPanel>
+            <Label>Email</Label>
+            <TextBox x:Name="EmailValue" TextChanged="EmailTextChange"/>
+        </StackPanel>
+        <StackPanel>
+            <Label>Password</Label>
+            <PasswordBox Name="PasswordValue" PasswordChanged="PasswordTextChange"></PasswordBox>
+        </StackPanel>
+        <StackPanel>
+            <Label Name="InvalidCredentialsText" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">Wrong email or password !</Label>
+            <Button Name="LoginButton" Padding="10,0" Margin="50,10,50,0" Click="LoginButtonClick" IsEnabled="False">Login</Button>
+        </StackPanel>
+    </StackPanel>
+</Page>
