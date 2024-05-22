@@ -24,5 +24,10 @@ namespace DotNetProjectWPF.Pages
         {
             MainFrame.Navigate(new SettingsPage(MainFrame));
         }
+
+        private void FAQButtonClick(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new FAQPage(MainFrame));
+        }
     }
 }

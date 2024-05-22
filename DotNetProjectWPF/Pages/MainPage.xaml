@@ -19,5 +19,8 @@
         <Button Click="SettingsButtonClick" Width="50" Height="50">
             <Image Source="/Images/Settings.png"/>
         </Button>
+        <Button Click="FAQButtonClick" Width="50" Height="50">
+            <Image Source="/Images/FAQ.png"/>
+        </Button>
     </StackPanel>
 </Page>
