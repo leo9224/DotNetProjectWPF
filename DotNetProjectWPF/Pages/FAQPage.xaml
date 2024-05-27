@@ -8,79 +8,87 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FAQPage">
 
-    <StackPanel>
+    <StackPanel Margin="15">
         <TextBlock TextWrapping="Wrap" FontSize="25">
             <Run Text="FAQ" FontWeight="Bold" TextDecorations="Underline" />
             <LineBreak />
         </TextBlock>
 
-        <TextBlock TextWrapping="Wrap" FontSize="20">
-            <Run Text="1. Le PC ne s'allume pas" TextDecorations="Underline" />
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier l'alimentation : Assurez-vous que le câble d'alimentation est bien branché à la prise murale et à l'unité centrale du PC."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier la multiprise : Si vous utilisez une multiprise, vérifiez qu'elle est allumée et fonctionnelle."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Tester une autre prise : Essayez de brancher le PC sur une autre prise pour voir si le problème persiste."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier le bouton d'alimentation : Assurez-vous que le bouton d'alimentation de l'unité centrale est enfoncé correctement."/>
-            <LineBreak />
-        </TextBlock>
+        <Expander Header="1. Le PC ne s'allume pas" FontSize="20">
+            <StackPanel Margin="30 0 0 0">
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier l'alimentation : Assurez-vous que le câble d'alimentation est bien branché à la prise murale et à l'unité centrale du PC."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier la multiprise : Si vous utilisez une multiprise, vérifiez qu'elle est allumée et fonctionnelle."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Tester une autre prise : Essayez de brancher le PC sur une autre prise pour voir si le problème persiste."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier le bouton d'alimentation : Assurez-vous que le bouton d'alimentation de l'unité centrale est enfoncé correctement."/>
+                    <LineBreak />
+                </TextBlock>
+            </StackPanel>
+        </Expander>
 
-        <TextBlock TextWrapping="Wrap" FontSize="20">
-            <Run Text="2. Le PC est allumé mais l'écran reste noir" TextDecorations="Underline" />
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier la connexion de l'écran : Assurez-vous que le câble de l'écran (HDMI, VGA, DVI) est bien connecté au PC et à l'écran." />
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier l'alimentation de l'écran : Assurez-vous que l'écran est bien branché et allumé."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Tester avec un autre écran : Connectez un autre écran pour vérifier si le problème vient de l'écran ou du PC."/>
-            <LineBreak />
-        </TextBlock>
+        <Expander Header="2. Le PC est allumé mais l'écran reste noir" FontSize="20">
+            <StackPanel Margin="30 0 0 0">
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier la connexion de l'écran : Assurez-vous que le câble de l'écran (HDMI, VGA, DVI) est bien connecté au PC et à l'écran." />
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier l'alimentation de l'écran : Assurez-vous que l'écran est bien branché et allumé."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Tester avec un autre écran : Connectez un autre écran pour vérifier si le problème vient de l'écran ou du PC."/>
+                    <LineBreak />
+                </TextBlock>
+            </StackPanel>
+        </Expander>
 
-        <TextBlock TextWrapping="Wrap" FontSize="20">
-            <Run Text="3. Le PC ne se connecte pas à Internet" TextDecorations="Underline" />
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier la connexion réseau : Assurez-vous que le câble Ethernet est bien connecté au PC et au routeur/switch."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Tester un autre câble : Utilisez un autre câble Ethernet pour vérifier si le problème vient du câble."/>
-            <LineBreak />
-        </TextBlock>
+        <Expander Header="3. Le PC ne se connecte pas à Internet" FontSize="20">
+            <StackPanel Margin="30 0 0 0">
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier la connexion réseau : Assurez-vous que le câble Ethernet est bien connecté au PC et au routeur/switch."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Tester un autre câble : Utilisez un autre câble Ethernet pour vérifier si le problème vient du câble."/>
+                    <LineBreak />
+                </TextBlock>
+            </StackPanel>
+        </Expander>
 
-        <TextBlock TextWrapping="Wrap" FontSize="20">
-            <Run Text="4. Le PC ne reconnaît pas une clé USB ou un périphérique externe" TextDecorations="Underline" />
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Essayer un autre port USB : Branchez la clé USB ou le périphérique sur un autre port USB."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier la clé USB : Testez la clé USB ou le périphérique sur un autre PC pour vérifier son fonctionnement."/>
-            <LineBreak />
-        </TextBlock>
+        <Expander Header="4. Le PC ne reconnaît pas une clé USB ou un périphérique externe" FontSize="20">
+            <StackPanel Margin="30 0 0 0">
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Essayer un autre port USB : Branchez la clé USB ou le périphérique sur un autre port USB."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier la clé USB : Testez la clé USB ou le périphérique sur un autre PC pour vérifier son fonctionnement."/>
+                    <LineBreak />
+                </TextBlock>
+            </StackPanel>
+        </Expander>
 
-        <TextBlock TextWrapping="Wrap" FontSize="20">
-            <Run Text="5. Je n'arrive pas à me connecter à mon compte 3iL" TextDecorations="Underline" />
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier les identifiants : Assurez-vous que vous utilisez le bon nom d'utilisateur et le bon mot de passe. Vérifiez les majuscules et minuscules."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Réinitialiser le mot de passe : Si vous avez oublié votre mot de passe, utilisez l'option de réinitialisation du mot de passe."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Vérifier la connexion réseau : Assurez-vous que le PC est connecté à Internet."/>
-        </TextBlock>
-        <TextBlock TextWrapping="Wrap" FontSize="15">
-            <Run Text="Contactez l'administrateur réseau : Si le problème persiste, contactez l'administrateur réseau ou le service informatique de l'école pour qu'ils vérifient votre compte et réinitialisent votre mot de passe si nécessaire."/>
-        </TextBlock>
+        <Expander Header="5. Je n'arrive pas à me connecter à mon compte 3iL" FontSize="20">
+            <StackPanel Margin="30 0 0 0">
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier les identifiants : Assurez-vous que vous utilisez le bon nom d'utilisateur et le bon mot de passe. Vérifiez les majuscules et minuscules."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Réinitialiser le mot de passe : Si vous avez oublié votre mot de passe, utilisez l'option de réinitialisation du mot de passe."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Vérifier la connexion réseau : Assurez-vous que le PC est connecté à Internet."/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
+                    <Run Text="Contactez l'administrateur réseau : Si le problème persiste, contactez l'administrateur réseau ou le service informatique de l'école pour qu'ils vérifient votre compte et réinitialisent votre mot de passe si nécessaire."/>
+                    <LineBreak />
+                </TextBlock>
+            </StackPanel>
+        </Expander>
+
+        <Button Click="BackButtonClick" Margin="0 20">Back</Button>
     </StackPanel>
 </Page>

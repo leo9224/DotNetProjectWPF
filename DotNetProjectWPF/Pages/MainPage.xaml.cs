@@ -22,7 +22,7 @@ namespace DotNetProjectWPF.Pages
 
 		private void SettingsButtonClick(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new SettingsPage(MainFrame));
+            MainFrame.Navigate(new AuthenticationPage(MainFrame));
         }
 
         private void FAQButtonClick(object sender, RoutedEventArgs e)

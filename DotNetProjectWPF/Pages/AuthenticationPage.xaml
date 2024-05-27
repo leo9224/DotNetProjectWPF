@@ -9,9 +9,6 @@
       Title="AuthentificationPage">
 
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <StackPanel HorizontalAlignment="Left">
-            <Button Click="ExitButtonClick" Padding="10,0">Back</Button>
-        </StackPanel>
         <StackPanel>
             <Label>Email</Label>
             <TextBox x:Name="EmailValue" TextChanged="EmailTextChange"/>
@@ -23,6 +20,7 @@
         <StackPanel>
             <Label Name="InvalidCredentialsText" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">Wrong email or password !</Label>
             <Button Name="LoginButton" Padding="10,0" Margin="50,10,50,0" Click="LoginButtonClick" IsEnabled="False">Login</Button>
+            <Button Click="ExitButtonClick" Padding="10,0" Margin="50,10,50,0">Back</Button>
         </StackPanel>
     </StackPanel>
 </Page>

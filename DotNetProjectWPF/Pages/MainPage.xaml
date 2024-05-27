@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
 
-    <StackPanel Orientation="Horizontal">
+    <StackPanel HorizontalAlignment="Center">
         <StackPanel>
             <TextBlock Name="DeviceName"/>
             <TextBlock Name="MacAddress"/>
@@ -16,11 +16,13 @@
             <TextBlock Name="OsPlatform"/>
             <TextBlock Name="OsVersion"/>
         </StackPanel>
-        <Button Click="SettingsButtonClick" Width="50" Height="50">
-            <Image Source="/Images/Settings.png"/>
-        </Button>
-        <Button Click="FAQButtonClick" Width="50" Height="50">
-            <Image Source="/Images/FAQ.png"/>
-        </Button>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Click="SettingsButtonClick" Width="50" Height="50" Margin="0 0 5 0">
+                <Image Source="/Images/Settings.png"/>
+            </Button>
+            <Button Click="FAQButtonClick" Width="50" Height="50" Margin="5 0 0 0">
+                <Image Source="/Images/FAQ.png"/>
+            </Button>
+        </StackPanel>
     </StackPanel>
 </Page>

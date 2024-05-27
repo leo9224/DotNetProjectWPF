@@ -11,5 +11,10 @@ namespace DotNetProjectWPF.Pages
 
             InitializeComponent();
         }
+
+        private void BackButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MainFrame.GoBack();
+        }
     }
 }

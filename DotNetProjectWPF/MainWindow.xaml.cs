@@ -14,7 +14,7 @@ namespace DotNetProjectWPF
 
             if (Config.IsFirstLaunch)
             {
-				MainFrame.Navigate(new SettingsPage(MainFrame));
+				MainFrame.Navigate(new AuthenticationPage(MainFrame));
                 Config.IsFirstLaunch = false;
 			}
             else

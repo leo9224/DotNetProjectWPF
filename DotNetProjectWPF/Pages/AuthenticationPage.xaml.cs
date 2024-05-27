@@ -2,35 +2,39 @@
 using System.Windows;
 using System.Windows.Controls;
 using DotNetProjectLibrary.Authentication;
+using Newtonsoft.Json.Linq;
 
 namespace DotNetProjectWPF.Pages
 {
     public partial class AuthenticationPage : Page
     {
         private Frame MainFrame;
-        private Page NavigateTo;
 
-        public AuthenticationPage(Frame mainFrame, Page navigateTo)
+        public AuthenticationPage(Frame mainFrame)
         {
             MainFrame = mainFrame;
-            NavigateTo = navigateTo;
 
             InitializeComponent();
         }
 
         private async void LoginButtonClick(object sender, RoutedEventArgs e)
         {
-            HttpClient HttpClient = new();
+            HttpClient httpClient = new();
 
             try
             {
-                HttpResponseMessage httpResponse = await HttpClient.GetAsync($"{Config.ApiUrl}/api/authentication/{EmailValue.Text}/{PasswordValue.Password}");
-                if (httpResponse.IsSuccessStatusCode)
+                HttpResponseMessage httpResponseMessage = await httpClient.GetAsync($"{Config.ApiUrl}/api/authentication/{EmailValue.Text}/{PasswordValue.Password}");
+                if (httpResponseMessage.IsSuccessStatusCode)
                 {
-                    string token = await httpResponse.Content.ReadAsStringAsync();
+                    string stringResponse = await httpResponseMessage.Content.ReadAsStringAsync();
+                    JObject jsonResponse = JObject.Parse(stringResponse);
+
+                    string token = $"Bearer {jsonResponse.GetValue("token")}";
+                    int userId = jsonResponse.GetValue("user_id")!.ToObject<int>();
+
                     token = $"Bearer {token}";
 
-                    MainFrame.Navigate(NavigateTo);
+                    MainFrame.Navigate(new SettingsPage(MainFrame, token));
                 }
                 else
                 {
@@ -57,8 +61,14 @@ namespace DotNetProjectWPF.Pages
 
         private void ExitButtonClick(object sender, RoutedEventArgs e)
         {
-            MainFrame.GoBack();
-            
+            try
+            {
+                MainFrame.GoBack();
+            }
+            catch
+            {
+
+            }
 		}
 
         private void EmailTextChange(object sender, TextChangedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Diagnostics;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Windows;
@@ -11,12 +12,14 @@ namespace DotNetProjectWPF.Pages
     public partial class SettingsPage : Page
     {
         Frame MainFrame;
+		string Token;
 
-        public SettingsPage(Frame mainFrame)
+        public SettingsPage(Frame mainFrame, string token)
         {
             MainFrame = mainFrame;
+			Token = token;
 
-            MainFrame.Navigate(new AuthenticationPage(MainFrame, this));
+            MainFrame.Navigate(new AuthenticationPage(MainFrame));
 
             InitializeComponent();
 
@@ -26,17 +29,7 @@ namespace DotNetProjectWPF.Pages
 
         private void UpdateApiUrlButtonClick(object sender, RoutedEventArgs e)
         {
-            if (!ApiUrl.IsEnabled)
-            {
-				ApiUrl.IsEnabled = true;
-                UpdateApiUrlButton.Content = "Save";
-            }
-            else
-            {
-				ApiUrl.IsEnabled = false;
-				UpdateApiUrlButton.Content = "Update";
-                Config.UpdateApiUrl(ApiUrl.Text);
-            }
+			UpdateButtonClick(ApiUrl, UpdateApiUrlButton, () => Config.UpdateApiUrl(ApiUrl.Text));
         }
 
 		private void UpdateRoomIdOfTheMachineButtonClick(object sender, RoutedEventArgs e)
@@ -49,9 +42,10 @@ namespace DotNetProjectWPF.Pages
 				if (stringId != "")
 				{
 					id = int.Parse(stringId);
-				}
-				UpdateButtonClick(RoomIdOfTheMachine, UpdateRoomIdOfTheMachineButton, () => Config.UpdateRoomIdOfTheMachine(id));
-			}
+                }
+                UpdateButtonClick(RoomIdOfTheMachine, UpdateRoomIdOfTheMachineButton, () => Config.UpdateRoomIdOfTheMachine(id));
+                IdNotInt.Visibility = Visibility.Collapsed;
+            }
 			catch (Exception exception)
 			{
 				IdNotInt.Visibility = Visibility.Visible;
@@ -64,50 +58,35 @@ namespace DotNetProjectWPF.Pages
 			{
 				textBox.IsEnabled = true;
 				button.Content = "Save";
-			}
+                SaveButton.IsEnabled = false;
+            }
 			else
 			{
 				textBox.IsEnabled = false;
 				button.Content = "Update";
 				updateValueFunction();
-			}
+                SaveButton.IsEnabled = true;
+            }
 		}
 
 		private async void SaveButtonClick(object sender, RoutedEventArgs e)
 		{
 			if (Config.ApiUrl != null && Config.RoomIdOfTheMachine != null)
 			{
+				HttpClient httpClient = new();
+                httpClient.DefaultRequestHeaders.Add("Authorization", Token);
+
+                Computer computer = new Computer { name = Utils.GetMachineName(), os=Utils.GetOsPlatform(), os_version=Utils.GetOsVersion(), room_id=Config.RoomIdOfTheMachine, status="ON"};
+
+				HttpContent content = new StringContent(JsonConvert.SerializeObject(computer), Encoding.UTF8, MediaTypeHeaderValue.Parse("application/json"));
 				try
 				{
-					MainFrame.GoBack();
-				}
-				catch
+                    HttpResponseMessage httpResponse = await httpClient.PostAsync($"{Config.ApiUrl}/api/computer", content);
+                    MainFrame.Navigate(new MainPage(MainFrame));
+                }
+                catch
 				{
-					MainFrame.Navigate(new MainPage(MainFrame));
-				}
-				finally
-				{
-					HttpClient HttpClient = new();
 
-					Computer computer = new Computer { name = Utils.GetMachineName(), os=Utils.GetOsPlatform(), os_version=Utils.GetOsVersion(), room_id=Config.RoomIdOfTheMachine, status="ON"};
-
-					try
-					{
-						HttpContent content = new StringContent(JsonConvert.SerializeObject(computer), Encoding.UTF8, MediaTypeHeaderValue.Parse("application/json"));
-						HttpResponseMessage httpResponse = await HttpClient.PostAsync($"{Config.ApiUrl}/api/computer", content);
-						if (httpResponse.IsSuccessStatusCode)
-						{
-							
-						}
-						else
-						{
-							
-						}
-					}
-					catch (Exception exception)
-					{
-
-					}
 				}
 			}
 			else
