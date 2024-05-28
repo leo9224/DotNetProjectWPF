@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DotNetProjectWPF"
         xmlns:tb="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
-        Title="3iL ITControl" Icon="/Images/Logo.ico" Height="450" Width="800">
+        Title="3iL ITControl" Icon="/Images/Logo.ico" Height="450" Width="800" Background="#005067">
 
     <StackPanel VerticalAlignment="Center">
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>

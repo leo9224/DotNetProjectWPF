@@ -10,17 +10,17 @@
 
     <StackPanel HorizontalAlignment="Center">
         <StackPanel>
-            <TextBlock Name="DeviceName"/>
-            <TextBlock Name="MacAddress"/>
-            <TextBlock Name="IpAddress"/>
-            <TextBlock Name="OsPlatform"/>
-            <TextBlock Name="OsVersion"/>
+            <TextBlock Name="DeviceName" Foreground="White"/>
+            <TextBlock Name="MacAddress" Foreground="White"/>
+            <TextBlock Name="IpAddress" Foreground="White"/>
+            <TextBlock Name="OsPlatform" Foreground="White"/>
+            <TextBlock Name="OsVersion" Foreground="White"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button Click="SettingsButtonClick" Width="50" Height="50" Margin="0 0 5 0">
+            <Button Click="SettingsButtonClick" Width="50" Height="50" Margin="0 0 5 0" Background="#E84D0D" Foreground="White">
                 <Image Source="/Images/Settings.png"/>
             </Button>
-            <Button Click="FAQButtonClick" Width="50" Height="50" Margin="5 0 0 0">
+            <Button Click="FAQButtonClick" Width="50" Height="50" Margin="5 0 0 0" Background="#E84D0D" Foreground="White">
                 <Image Source="/Images/FAQ.png"/>
             </Button>
         </StackPanel>

@@ -9,12 +9,12 @@
       Title="FAQPage">
 
     <StackPanel Margin="15">
-        <TextBlock TextWrapping="Wrap" FontSize="25">
+        <TextBlock TextWrapping="Wrap" FontSize="25" Foreground="White">
             <Run Text="FAQ" FontWeight="Bold" TextDecorations="Underline" />
             <LineBreak />
         </TextBlock>
 
-        <Expander Header="1. Le PC ne s'allume pas" FontSize="20">
+        <Expander Header="1. Le PC ne s'allume pas" FontSize="20" Foreground="White">
             <StackPanel Margin="30 0 0 0">
                 <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
                     <Run Text="Vérifier l'alimentation : Assurez-vous que le câble d'alimentation est bien branché à la prise murale et à l'unité centrale du PC."/>
@@ -32,7 +32,7 @@
             </StackPanel>
         </Expander>
 
-        <Expander Header="2. Le PC est allumé mais l'écran reste noir" FontSize="20">
+        <Expander Header="2. Le PC est allumé mais l'écran reste noir" FontSize="20" Foreground="White">
             <StackPanel Margin="30 0 0 0">
                 <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
                     <Run Text="Vérifier la connexion de l'écran : Assurez-vous que le câble de l'écran (HDMI, VGA, DVI) est bien connecté au PC et à l'écran." />
@@ -47,7 +47,7 @@
             </StackPanel>
         </Expander>
 
-        <Expander Header="3. Le PC ne se connecte pas à Internet" FontSize="20">
+        <Expander Header="3. Le PC ne se connecte pas à Internet" FontSize="20" Foreground="White">
             <StackPanel Margin="30 0 0 0">
                 <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
                     <Run Text="Vérifier la connexion réseau : Assurez-vous que le câble Ethernet est bien connecté au PC et au routeur/switch."/>
@@ -59,7 +59,7 @@
             </StackPanel>
         </Expander>
 
-        <Expander Header="4. Le PC ne reconnaît pas une clé USB ou un périphérique externe" FontSize="20">
+        <Expander Header="4. Le PC ne reconnaît pas une clé USB ou un périphérique externe" FontSize="20" Foreground="White">
             <StackPanel Margin="30 0 0 0">
                 <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
                     <Run Text="Essayer un autre port USB : Branchez la clé USB ou le périphérique sur un autre port USB."/>
@@ -71,7 +71,7 @@
             </StackPanel>
         </Expander>
 
-        <Expander Header="5. Je n'arrive pas à me connecter à mon compte 3iL" FontSize="20">
+        <Expander Header="5. Je n'arrive pas à me connecter à mon compte 3iL" FontSize="20" Foreground="White">
             <StackPanel Margin="30 0 0 0">
                 <TextBlock TextWrapping="Wrap" FontSize="15" Margin="0 10 0 0">
                     <Run Text="Vérifier les identifiants : Assurez-vous que vous utilisez le bon nom d'utilisateur et le bon mot de passe. Vérifiez les majuscules et minuscules."/>
@@ -89,6 +89,6 @@
             </StackPanel>
         </Expander>
 
-        <Button Click="BackButtonClick" Margin="0 20">Back</Button>
+        <Button Click="BackButtonClick" Margin="0 20" Background="#E84D0D" Foreground="White">Back</Button>
     </StackPanel>
 </Page>

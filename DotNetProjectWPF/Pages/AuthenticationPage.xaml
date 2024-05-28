@@ -10,17 +10,17 @@
 
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <StackPanel>
-            <Label>Email</Label>
+            <Label Foreground="White">Email</Label>
             <TextBox x:Name="EmailValue" TextChanged="EmailTextChange"/>
         </StackPanel>
         <StackPanel>
-            <Label>Password</Label>
+            <Label Foreground="White">Password</Label>
             <PasswordBox Name="PasswordValue" PasswordChanged="PasswordTextChange"></PasswordBox>
         </StackPanel>
         <StackPanel>
             <Label Name="InvalidCredentialsText" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">Wrong email or password !</Label>
-            <Button Name="LoginButton" Padding="10,0" Margin="50,10,50,0" Click="LoginButtonClick" IsEnabled="False">Login</Button>
-            <Button Click="ExitButtonClick" Padding="10,0" Margin="50,10,50,0">Back</Button>
+            <Button Name="LoginButton" Padding="10,0" Margin="50,10,50,0" Click="LoginButtonClick" IsEnabled="False" Background="#E84D0D" Foreground="White">Login</Button>
+            <Button Click="ExitButtonClick" Padding="10,0" Margin="50,10,50,0" Background="#E84D0D" Foreground="White">Back</Button>
         </StackPanel>
     </StackPanel>
 </Page>

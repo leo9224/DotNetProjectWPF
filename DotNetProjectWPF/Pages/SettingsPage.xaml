@@ -10,19 +10,19 @@
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
         <StackPanel Orientation="Horizontal">
-            <Label VerticalAlignment="Center">API Address</Label>
+            <Label VerticalAlignment="Center" Foreground="White">API Address</Label>
             <TextBox Name="ApiUrl" VerticalAlignment="Center" IsEnabled="False" MinWidth="100"/>
-            <Button Name="UpdateApiUrlButton" VerticalAlignment="Center" Padding="10,0" Margin="10,0" Click="UpdateApiUrlButtonClick">Update</Button>
+            <Button Name="UpdateApiUrlButton" VerticalAlignment="Center" Padding="10,0" Margin="10,0" Click="UpdateApiUrlButtonClick" Background="#E84D0D" Foreground="White">Update</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label VerticalAlignment="Center">Room ID of the machine</Label>
+            <Label VerticalAlignment="Center" Foreground="White">Room ID of the machine</Label>
             <TextBox Name="RoomIdOfTheMachine" VerticalAlignment="Center" IsEnabled="False" MinWidth="100"/>
-            <Button Name="UpdateRoomIdOfTheMachineButton" VerticalAlignment="Center" Padding="10,0" Margin="10,0" Click="UpdateRoomIdOfTheMachineButtonClick">Update</Button>
+            <Button Name="UpdateRoomIdOfTheMachineButton" VerticalAlignment="Center" Padding="10,0" Margin="10,0" Click="UpdateRoomIdOfTheMachineButtonClick" Background="#E84D0D" Foreground="White">Update</Button>
             <Label Name="IdNotInt" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">ID must be an integer !</Label>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
             <Label Name="NullValue" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed">Please complete all fields !</Label>
-            <Button Name="SaveButton" VerticalAlignment="Center" Padding="10,0" Click="SaveButtonClick">Save</Button>
+            <Button Name="SaveButton" VerticalAlignment="Center" Padding="10,0" Click="SaveButtonClick" Background="#E84D0D" Foreground="White">Save</Button>
         </StackPanel>
     </StackPanel>
 </Page>
