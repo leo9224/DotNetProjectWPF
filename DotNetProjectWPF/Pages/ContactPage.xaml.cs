@@ -13,7 +13,6 @@ namespace DotNetProjectWPF.Pages
     {
         private Frame MainFrame;
 
-        private string RoomName;
         private string ComputerName;
 
         public ContactPage(Frame mainFrame)
@@ -22,10 +21,8 @@ namespace DotNetProjectWPF.Pages
 
             MainFrame = mainFrame;
 
-            RoomName = "Room name";
             ComputerName = Utils.GetMachineName();
 
-            RoomValue.Text = RoomName;
             ComputerValue.Text = ComputerName;
         }
 
@@ -67,7 +64,7 @@ namespace DotNetProjectWPF.Pages
         {
             HttpClient httpClient = new();
 
-            Ticket ticket = new Ticket { site_name = SiteValue.Text, room_name = RoomName, computer_name = ComputerName, email = EmailValue.Text, message = MessageValue.Text };
+            Ticket ticket = new Ticket { site_name = SiteValue.Text, room_name = RoomValue.Text, computer_name = ComputerName, email = EmailValue.Text, message = MessageValue.Text };
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(ticket), Encoding.UTF8, MediaTypeHeaderValue.Parse("application/json"));
             try
