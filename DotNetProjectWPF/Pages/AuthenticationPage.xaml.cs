@@ -49,7 +49,7 @@ namespace DotNetProjectWPF.Pages
 
         private void CheckValidEmailAndPassword()
         {
-            if (Authentication.CheckValidEmail(EmailValue.Text) && Authentication.CheckValidPassword(EmailValue.Text))
+            if (Authentication.CheckValidEmail(EmailValue.Text) && Authentication.CheckValidPassword(PasswordValue.Password))
             {
                 LoginButton.IsEnabled = true;
             }

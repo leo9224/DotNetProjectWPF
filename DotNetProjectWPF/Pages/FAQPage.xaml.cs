@@ -16,5 +16,10 @@ namespace DotNetProjectWPF.Pages
         {
             MainFrame.GoBack();
         }
+
+        private void ContactButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ContactPage(MainFrame));
+        }
     }
 }

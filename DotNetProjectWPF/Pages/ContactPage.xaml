@@ -1,0 +1,41 @@
+﻿<Page x:Class="DotNetProjectWPF.Pages.ContactPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DotNetProjectWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ContactPage">
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel>
+            <Label Foreground="White">Site</Label>
+            <ComboBox x:Name="SiteValue" SelectionChanged="SiteSelectionChange">
+                <ComboBoxItem>3iL Limoges</ComboBoxItem>
+                <ComboBoxItem>3iL Rodez</ComboBoxItem>
+                <ComboBoxItem>3iL Nantes</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel>
+            <Label Foreground="White">Room</Label>
+            <TextBox x:Name="RoomValue" IsEnabled="False"/>
+        </StackPanel>
+        <StackPanel>
+            <Label Foreground="White">Computer name</Label>
+            <TextBox Name="ComputerValue" IsEnabled="False"></TextBox>
+        </StackPanel>
+        <StackPanel>
+            <Label Foreground="White">Email</Label>
+            <TextBox Name="EmailValue"  TextChanged="EmailTextChange"></TextBox>
+        </StackPanel>
+        <StackPanel>
+            <Label Foreground="White">Message</Label>
+            <TextBox Name="MessageValue"  TextChanged="MessageTextChange" TextWrapping="Wrap" TextAlignment="Justify" AcceptsReturn="True" Height="100"></TextBox>
+        </StackPanel>
+        <StackPanel>
+            <Button Name="SendButton" Padding="10,0" Margin="50,10,50,0" Click="SendButtonClick" IsEnabled="False" Background="#E84D0D" Foreground="White">Send</Button>
+            <Button Click="ExitButtonClick" Padding="10,0" Margin="50,10,50,0" Background="#E84D0D" Foreground="White">Back</Button>
+        </StackPanel>
+    </StackPanel>
+</Page>

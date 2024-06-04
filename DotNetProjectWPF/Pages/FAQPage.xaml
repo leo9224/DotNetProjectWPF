@@ -89,6 +89,13 @@
             </StackPanel>
         </Expander>
 
-        <Button Click="BackButtonClick" Margin="0 20" Background="#E84D0D" Foreground="White">Back</Button>
+        <StackPanel Orientation="Horizontal" Margin="0 20">
+            <TextBlock TextWrapping="Wrap" FontSize="15" Foreground="White">
+                <Run Text="Vous ne trouver pas la solution à votre problème ?  -->  "/>
+            </TextBlock>
+            <Button Click="ContactButtonClick" Background="#E84D0D" Foreground="White" Padding="10 0">Poser votre question</Button>
+        </StackPanel>
+
+        <Button Click="BackButtonClick" Background="#E84D0D" Foreground="White">Back</Button>
     </StackPanel>
 </Page>
