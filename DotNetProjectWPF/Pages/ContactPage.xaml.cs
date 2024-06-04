@@ -31,7 +31,7 @@ namespace DotNetProjectWPF.Pages
 
         private void CheckValidEmailAndMessageAndSite()
         {
-            if (Authentication.CheckValidEmail(EmailValue.Text) && !string.IsNullOrWhiteSpace(MessageValue.Text) && SiteValue.SelectedIndex != -1)
+            if (Authentication.CheckValidEmail(EmailValue.Text) && !string.IsNullOrWhiteSpace(MessageValue.Text) && SiteValue.SelectedIndex != -1 && !string.IsNullOrWhiteSpace(RoomValue.Text))
             {
                 SendButton.IsEnabled = true;
             }

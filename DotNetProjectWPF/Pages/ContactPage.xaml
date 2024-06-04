@@ -19,7 +19,7 @@
         </StackPanel>
         <StackPanel>
             <Label Foreground="White">Room</Label>
-            <TextBox x:Name="RoomValue" IsEnabled="False"/>
+            <TextBox x:Name="RoomValue"/>
         </StackPanel>
         <StackPanel>
             <Label Foreground="White">Computer name</Label>
